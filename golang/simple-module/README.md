@@ -2,15 +2,17 @@
 
 A [tutorial example](https://golang.org/doc/tutorial/create-module) to build a simple Go module.
 
-### Build and Run
+### Compile, Install and Run the Application 
 ```bash
-cd hello/ && go build
-./hello
-```
+cd hello/
+# discover installation paths
+go list -f '{{.Target}}'
 
-You should see the following on your terminal:
-```
-Hi, Gladys. Welcome!
+# add the path to "bin/" discovered from the previous step to system shell path
+export PATH=$PATH:/path/to/your/install/directory
+
+# compile, install and run the package
+go build && ./hello
 ```
 
 ## Test
