@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Import and call functions defined in `greetings` module in main `hello` module
   - Add simple error handling
   - Add random greeting feature with `math.rand` and `slice` (`golang`'s dynamic array)
+  - Add greetings for multiple people (`Hellos()`)
 - `.gitignore` (referenced from https://github.com/github/gitignore/blob/master/Go.gitignore)
 
 ### Changed

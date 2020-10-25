@@ -13,8 +13,11 @@ func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
+	// Slice of names.
+	names := []string{"Ale", "Eric", "Tony", "Brandon", "Justin", "Wayne"}
 	// Request a greetings message.
-	message, err := greetings.Hello("Tyler")
+	// message, err := greetings.Hello("Tyler")
+	message, err := greetings.Hellos(names)
 	// If an error occurred, print to console and exit.
 	if err != nil {
 		log.Fatal(err)
