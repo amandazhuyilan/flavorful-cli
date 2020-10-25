@@ -2,13 +2,18 @@
 
 A [tutorial example](https://golang.org/doc/tutorial/create-module) to build a simple Go module.
 
-To build and run this example, do the following:
-```
+### Build and Run
+```bash
 cd hello/ && go build
 ./hello
 ```
 
-You should see the following on your console:
+You should see the following on your terminal:
 ```
 Hi, Gladys. Welcome!
+```
+
+### Lint and Format Correction
+```bash
+gofmt
 ```
