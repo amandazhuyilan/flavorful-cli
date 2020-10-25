@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Add simple error handling
   - Add random greeting feature with `math.rand` and `slice` (`golang`'s dynamic array)
   - Add greetings for multiple people (`Hellos()`)
+  - Add unit tests for `greetings.Hello()` and how to run go tests
 - `.gitignore` (referenced from https://github.com/github/gitignore/blob/master/Go.gitignore)
 
 ### Changed

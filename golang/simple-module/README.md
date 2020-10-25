@@ -13,6 +13,12 @@ You should see the following on your terminal:
 Hi, Gladys. Welcome!
 ```
 
+## Test
+To run test,
+```bash
+cd greetings/ && go test
+```
+
 ### Lint and Format Correction
 ```bash
 gofmt
