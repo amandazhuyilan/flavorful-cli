@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2020-11-14
+### Added 
+- Set up packages using [`dep`|https://golang.github.io/dep/docs/introduction.html]
+
+### Others
+Tried to set up `cobra` but was defeated - will try to set up another `hello-cli-go` package again.
+
 ## 2020-11-08
 ### Added
 - Skeleton of `go` flavored `hello-cli` with `cobra` library.
