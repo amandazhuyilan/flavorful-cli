@@ -1,5 +1,5 @@
 /*
-Copyright © 2020 NAME HERE <EMAIL ADDRESS>
+Copyright © 2020 Amanda Zhu <amandazhuyilan@gmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@ package cmd
 
 import (
 	"fmt"
+	"os/user"
+	"runtime"
 
 	"github.com/spf13/cobra"
 )
@@ -24,15 +26,13 @@ import (
 // nameCmd represents the name command
 var nameCmd = &cobra.Command{
 	Use:   "name",
-	Short: "Displays current user's name",
-	// 	Long: `A longer description that spans multiple lines and likely contains examples
-	// and usage of using your command. For example:
-
-	// Cobra is a CLI library for Go that empowers applications.
-	// This application is a tool to generate the needed files
-	// to quickly create a Cobra application.`,
+	Short: "Displays current user's name and username",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("name called")
+		if runtime.GOOS == "windows" {
+			fmt.Println("Can't Execute this on a windows machine")
+		} else {
+			execute()
+		}
 	},
 }
 
@@ -48,4 +48,15 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// nameCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}
+
+func execute() {
+	user, err := user.Current()
+	if err != nil {
+		panic(err)
+	}
+
+	// Print current user name and username
+	fmt.Println("Hello " + user.Name + "! (id: " + user.Uid + ")")
+	fmt.Println("Username: " + user.Username)
 }
