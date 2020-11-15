@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 2020-11-15
+## Added
+- Implementation of `flavorful-cli name` with `os/user` import.
+- Simple unit tests (that has room for improvement) for `name.go` functions.
+
 ## Changed
 - Moved `golang` implementation of `hello-cli` to a new branch `flavorful-cli/golang` for easier package management.
 

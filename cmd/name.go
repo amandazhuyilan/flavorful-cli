@@ -31,7 +31,12 @@ var nameCmd = &cobra.Command{
 		if runtime.GOOS == "windows" {
 			fmt.Println("Can't Execute this on a windows machine")
 		} else {
-			execute()
+			user := getUser()
+			username := getUserName(user)
+			name := getName(user)
+
+			fmt.Println("Hello " + name + "!")
+			fmt.Println("Username: " + username)
 		}
 	},
 }
@@ -50,13 +55,18 @@ func init() {
 	// nameCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
-func execute() {
+func getUser() *user.User {
 	user, err := user.Current()
 	if err != nil {
 		panic(err)
 	}
+	return user
+}
 
-	// Print current user name and username
-	fmt.Println("Hello " + user.Name + "! (id: " + user.Uid + ")")
-	fmt.Println("Username: " + user.Username)
+func getUserName(user *user.User) string {
+	return user.Username
+}
+
+func getName(user *user.User) string {
+	return user.Name
 }
