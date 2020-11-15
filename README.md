@@ -22,6 +22,7 @@ A simple command line tool with the following arguments:
 - `flavorful-cli --weather --tomorrow` - gets and displays tomorrow's weather
    - [OpenWeather API](https://openweathermap.org/current)
 
-### Acknowledgements
+## Build
 
-Shout out to Sebastian, whose [100-day-UI-challenge and wonderful UI designs](https://www.instagram.com/p/Bsf6xuwBfJv/), inspired me to kick-start this amazing project.
+
+## Run
