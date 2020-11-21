@@ -17,14 +17,18 @@ package cmd
 
 import (
 	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
 
+	"github.com/briandowns/openweathermap"
 	"github.com/spf13/cobra"
 )
 
 // weatherCmd represents the weather command
 var weatherCmd = &cobra.Command{
 	Use:   "weather",
-	Short: "Displays the weather condition based on the user's location",
+	Short: "Displays the given city's current weather condition",
 	// 	Long: `A longer description that spans multiple lines and likely contains examples
 	// and usage of using your command. For example:
 
@@ -32,13 +36,25 @@ var weatherCmd = &cobra.Command{
 	// This application is a tool to generate the needed files
 	// to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("weather called")
+		OpenWeatherAPIKey := getContentfromTextFile("open_weather.txt")
+
+		currentWeather, err := openweathermap.NewCurrent("C", "EN", OpenWeatherAPIKey) // fahrenheit (imperial) with Russian output
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		// TODO: Handle bad city names
+		currentWeather.CurrentByName(city)
+		fmt.Println(currentWeather.Weather)
 	},
 }
 
+var city string
+
 func init() {
 	rootCmd.AddCommand(weatherCmd)
-
+	weatherCmd.Flags().StringVarP(&city, "city", "c", "", "City name (required)")
+	weatherCmd.MarkFlagRequired("city")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
@@ -49,3 +65,18 @@ func init() {
 	// is called directly, e.g.:
 	// weatherCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
+
+func getContentfromTextFile(fileName string) string {
+	file, err := os.Open(fileName)
+	if err != nil {
+		log.Panicf("failed reading file: %s", err)
+	}
+	defer file.Close()
+	data, err := ioutil.ReadAll(file)
+	dataStr := string(data)
+	return dataStr
+}
+
+// func getCityName() string {
+
+// }

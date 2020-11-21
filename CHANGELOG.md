@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2020-11-21
+## Added
+- Implementation of `flavorful-cli time` with `time` import.
+- Implementation of `flavorful-cli ip` using `curl`.
+- Additional flag to add city name for `weather` arg.
+- [`.gitsecret`](https://git-secret.io/) to securely store and access OpenWeather API keys.
+## Changed
+- Replaced `location` arg with `ip` since it is hard to get geolocation behind coperate VPN.
+
+## Removed
+- `fortuneCookie` arg
+
 ## 2020-11-15
 ## Added
 - Implementation of `flavorful-cli name` with `os/user` import.

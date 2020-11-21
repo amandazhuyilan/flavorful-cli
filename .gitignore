@@ -1,0 +1,4 @@
+.gitsecret/keys/random_seed
+!*.secret
+.gitsecret/open_weather.txt
+cmd/open_weather.txt

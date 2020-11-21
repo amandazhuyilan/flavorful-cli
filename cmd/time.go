@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/spf13/cobra"
 )
@@ -32,7 +33,8 @@ var timeCmd = &cobra.Command{
 	// This application is a tool to generate the needed files
 	// to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("time called")
+		currentTime := time.Now()
+		fmt.Println("Time: ", currentTime.Format("2006-01-02 15:04:05 Monday"))
 	},
 }
 
