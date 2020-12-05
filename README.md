@@ -3,6 +3,7 @@ This repo contains a command line tool, `flavorful-cli`, implemented in differen
 
 ### List of CLI tool flavors:
 - [x] [golang](https://github.com/amandazhuyilan/flavorful-cli/tree/golang) ([link to study notes](https://github.com/amandazhuyilan/flavorful-cli/blob/main/golang/NOTES.md))
+- [ ] Haskell
 - [ ] Rust
 - [ ] C++14
 - [ ] Python
