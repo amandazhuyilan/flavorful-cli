@@ -19,3 +19,8 @@ Haskell uses a very good type system that has type reference, you don't have to 
 
 - __Haskell is elegant and concise.__
 Because it uses a lot of high level concepts, Haskell programs are usually shorter, which means, compared to longer code, it is easier to maintain and less chance of bugs.
+
+## Lets Get Technical
+ 
+### Typeclasses
+A typeclass is a sort of interface that defines some sort of behavior. If a type is part of a typeclass, that means that it supports and implements the behavior the typeclass describes.
