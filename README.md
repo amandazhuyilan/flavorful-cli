@@ -6,7 +6,7 @@ This repo contains a command line tool, `flavorful-cli`, implemented in differen
 - [ ] Haskell
 - [ ] Rust
 - [ ] C++14
-- [ ] Python
+- [ ] [Python](https://github.com/amandazhuyilan/flavorful-cli/tree/python3)
 
 ### `hello-cli`
 A simple command line tool with the following arguments:
